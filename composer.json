@@ -18,5 +18,15 @@
         "psr-4": {
             "SEO\\": "src/SEO/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SEO\\": "tests/SEO/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpunit"
+        ]
     }
 }
