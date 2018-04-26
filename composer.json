@@ -1,0 +1,23 @@
+{
+    "name": "arkadiusjonczek/seo-lib",
+    "description": "SEO PHP Library to fetch search requests from Google and Co.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Arkadius Jonczek",
+            "email": "arkadius@jonczek.de"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^7.1"
+    },
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "SEO\\": "src/SEO/"
+        }
+    }
+}
+}
