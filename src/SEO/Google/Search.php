@@ -74,7 +74,7 @@ class Search
     public function parseHtml($html)
     {
         $pattern1 = '/<(div|li) class=\"g\"(.+?)<\/(div|li)>/i';
-        $pattern2 = '/<(h3|span) class=\"(r|_Tyb)\"><a\shref=\"([\.\/\&\=\:\;\?a-zA-Z0-9]*\".*>(.*)<\/a><\/(h3|span)>/i';
+        $pattern2 = '/<(h3|span) class=\"(r|_Tyb)\"><a\shref=\"([\.\/\&\=\:\;\?a-zA-Z0-9]*)\".*>(.*)<\/a><\/(h3|span)>/i';
 
         preg_match_all($pattern1, $html, $listItems);
 
@@ -82,7 +82,7 @@ class Search
         foreach ($listItems[0] as $item) {
 
             $found = preg_match($pattern2, $item, $matches);
-            print_r($found);exit;
+
             if ($found == 0 || $found == false) {
                 continue;
             }
