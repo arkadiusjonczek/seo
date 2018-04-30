@@ -6,7 +6,7 @@ class SearchResult implements \Iterator, \ArrayAccess, \Serializable
 {
     protected $entries;
 
-    public function __construct($entries = [])
+    public function __construct(array $entries)
     {
         $this->entries = $entries;
     }

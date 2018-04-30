@@ -9,7 +9,7 @@ class GoogleTest extends \PHPUnit\Framework\TestCase
 {
     public function testSearch()
     {
-        $searchCriteria = new SearchCriteria();
+        $searchCriteria = new SearchCriteria('foobar');
 
         $google = new Google('de', 'de');
         $search = $google->search($searchCriteria);

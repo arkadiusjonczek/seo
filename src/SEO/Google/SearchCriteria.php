@@ -4,5 +4,15 @@ namespace SEO\Google;
 
 class SearchCriteria
 {
-    protected $criterias;
+    protected $keyword;
+
+    public function __construct($keyword)
+    {
+        $this->keyword = $keyword;
+    }
+
+    public function getKeyword()
+    {
+        return $this->keyword;
+    }
 }
