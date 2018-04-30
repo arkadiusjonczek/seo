@@ -6,9 +6,20 @@ SEO PHP Library to check your position for a specified keyword and more...
 
 - Google
 
-## Example
+## Installation
+
+```bash
+composer require arkadiusjonczek/seo-lib
+```
+
+## Basic Usage
 
 ```php
+<?php
+
+use SEO\Google;
+use SEO\Google\SearchCriteria;
+
 $country  = 'de';
 $language = 'de';
 $searchCriteria = new SearchCriteria('hello world');
