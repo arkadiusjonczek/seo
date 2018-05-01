@@ -28,7 +28,7 @@ class SearchResult implements \Iterator, \ArrayAccess, \Serializable
         }
 
         if (empty($items)) {
-            throw new Exception('No domain found for this Search Result.');
+            throw new \Exception('No domain found for this Search Result.');
         }
 
         return $items;
