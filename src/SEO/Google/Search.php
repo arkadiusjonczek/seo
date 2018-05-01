@@ -74,10 +74,12 @@ class Search
     public function parseHtml($html)
     {
         $pattern1 = '/<(div|li) class=\"g\"(.+?)<\/(div|li)>/i';
-        $pattern2 = '/<(h3|span) class=\"(r|_Tyb)\"><a\shref=\"([\.\/\&\=\:\;\?a-zA-Z0-9]*)\".*>(.*)<\/a><\/(h3|span)>/i';
+        $pattern2 = '/<(h3|span) class=\"(r|_Tyb)\">.*<a\shref=\"([\.\,\+\!\<\>\/\&\%\@\#\*\€\~\$\=\:\;\?\-\_\(\)\{\}\[\]öÖüÜäÄa-zA-Z0-9]*)\".*>(.*)<\/a><\/(h3|span)>/i';
 
         preg_match_all($pattern1, $html, $listItems);
-
+//        file_put_contents('/Users/arkadius/dev/google1.txt', $html);
+//        print_r($listItems);
+//        exit;
         $items = [];
         foreach ($listItems[0] as $item) {
 
