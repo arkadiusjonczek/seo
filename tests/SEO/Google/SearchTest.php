@@ -61,8 +61,8 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $url = 'https://www.google.de/search?oe=utf-8&pws=0&complete=0&hl=de&num=100&q=foobar';
         $html = $method1->invokeArgs($search, [$url]);
 
-        $searchResult = $method2->invokeArgs($search, [$html]);
+        $items = $method2->invokeArgs($search, [$html]);
 
-        print_r($searchResult);
+        $this->assertCount(100, $items);
     }
 }

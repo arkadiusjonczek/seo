@@ -11,6 +11,29 @@ class SearchResult implements \Iterator, \ArrayAccess, \Serializable
         $this->entries = $entries;
     }
 
+    public function getEntries()
+    {
+        return $this->entries;
+    }
+
+    public function getPosition($domain)
+    {
+        $items = [];
+
+        foreach ($this->entries as $position => $item) {
+            if (strpos($item['url'], sprintf('http://%s', $domain)) !== false ||
+                strpos($item['url'], sprintf('https://%s', $domain)) !== false) {
+                $items[$position + 1] = $item;
+            }
+        }
+
+        if (empty($items)) {
+            throw new Exception('No domain found for this Search Result.');
+        }
+
+        return $items;
+    }
+
     public function current()
     {
         // TODO: Implement current() method.

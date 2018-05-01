@@ -96,6 +96,6 @@ class Search
             ];
         }
 
-        return new SearchResult($items);
+        return $items;
     }
 }
