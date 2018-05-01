@@ -87,8 +87,8 @@ class Search
                 continue;
             }
 
-            $url   = $matches[2];
-            $title = htmlspecialchars_decode($matches[3]);
+            $url   = $matches[3];
+            $title = htmlspecialchars_decode($matches[4]);
 
             $items[] = [
                 'title' => $title,
