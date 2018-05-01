@@ -2,10 +2,6 @@
 
 SEO PHP Library to check your position for a specified keyword and more...
 
-## Supported Search Engines
-
-- Google
-
 ## Installation
 
 ```bash
@@ -31,6 +27,10 @@ $searchResult = $search->getResult();
 
 print_r($searchResult);
 ```
+
+## Supported Search Engines
+
+- Google
 
 ## Projects
 
