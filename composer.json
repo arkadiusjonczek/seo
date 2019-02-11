@@ -1,5 +1,5 @@
 {
-    "name": "arkadiusjonczek/seo-lib",
+    "name": "arkadiusjonczek/seo",
     "description": "SEO PHP Library to fetch search requests from Google and Co.",
     "type": "library",
     "authors": [
