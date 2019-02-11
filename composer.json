@@ -12,7 +12,8 @@
         "phpunit/phpunit": "^7.1"
     },
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "symfony/console": "^4.2"
     },
     "autoload": {
         "psr-4": {

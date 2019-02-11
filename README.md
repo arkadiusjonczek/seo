@@ -1,11 +1,11 @@
-# seo-lib [![Build Status](https://img.shields.io/travis/arkadiusjonczek/seo-lib.svg)](https://travis-ci.org/arkadiusjonczek/seo-lib)
+# SEO [![Build Status](https://img.shields.io/travis/arkadiusjonczek/seo-lib.svg)](https://travis-ci.org/arkadiusjonczek/seo-lib)
 
-SEO PHP Library to check your position for a specified keyword and more...
+SEO Command and PHP Library to check your position for a specified keyword and more...
 
 ## Installation
 
 ```bash
-composer require arkadiusjonczek/seo-lib
+composer require arkadiusjonczek/seo
 ```
 
 ## Basic Usage
@@ -28,10 +28,12 @@ $searchResult = $search->getResult();
 print_r($searchResult);
 ```
 
+## CLI Usage
+
+```bash
+./seo
+```
+
 ## Supported Search Engines
 
 - Google
-
-## Projects
-
-- [SEO-CLI](https://github.com/arkadiusjonczek/seo-cli)
