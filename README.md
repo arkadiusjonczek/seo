@@ -1,4 +1,4 @@
-# SEO [![Build Status](https://img.shields.io/travis/arkadiusjonczek/seo-lib.svg)](https://travis-ci.org/arkadiusjonczek/seo-lib)
+# SEO [![Build Status](https://img.shields.io/travis/arkadiusjonczek/seo.svg)](https://travis-ci.org/arkadiusjonczek/seo)
 
 SEO Command and PHP Library to check your position for a specified keyword and more...
 
