@@ -2,6 +2,8 @@
 
 namespace SEO\Google;
 
+use Symfony\Component\DomCrawler\Crawler;
+
 class Search
 {
     /**
@@ -73,29 +75,24 @@ class Search
 
     public function parseHtml($html)
     {
-        $pattern1 = '/<(div|li) class=\"g\"(.+?)<\/(div|li)>/i';
-        $pattern2 = '/<(h3|span) class=\"(r|_Tyb)\">.*<a\shref=\"([\.\,\+\!\<\>\/\&\%\@\#\*\€\~\$\=\:\;\?\-\_\(\)\{\}\[\]öÖüÜäÄa-zA-Z0-9]*)\".*>(.*)<\/a><\/(h3|span)>/i';
+        $crawler = new Crawler();
+        $crawler->add($html);
 
-        preg_match_all($pattern1, $html, $listItems);
+        $entries = $crawler
+            ->filter('.srg')
+            ->filter('.g')
+            ->each(function (Crawler $nodeCrawler) {
+                $title = $nodeCrawler->filter('h3');
+                $desc  = $nodeCrawler->filter('.st');
+                $url   = $nodeCrawler->filter('a');
 
-        $items = [];
-        foreach ($listItems[0] as $item) {
+                return [
+                    'title' => $title->count() > 0 ? $title->text() : '',
+                    'desc'  => $desc->count() > 0 ? $desc->text() : '',
+                    'url'   => $url->attr('href'),
+                ];
+            });
 
-            $found = preg_match($pattern2, $item, $matches);
-
-            if ($found == 0 || $found == false) {
-                continue;
-            }
-
-            $url   = $matches[3];
-            $title = htmlspecialchars_decode($matches[4]);
-
-            $items[] = [
-                'title' => $title,
-                'url'   => $url
-            ];
-        }
-
-        return $items;
+        return $entries;
     }
 }
