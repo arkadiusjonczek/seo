@@ -31,7 +31,20 @@ print_r($searchResult);
 ## CLI Usage
 
 ```bash
-./seo
+./seo position dortmund www.dortmund.de
+```
+
+```bash
+Array
+(
+    [2] => Array
+        (
+            [title] => dortmund.de - Startseite
+            [desc] => Offizielles Stadtportal mit Informationen zu Politik, Wirtschaft, Kultur, Tourismus und Bürgerservice.
+            [url] => http://www.dortmund.de/
+        )
+
+)
 ```
 
 ## Supported Search Engines
