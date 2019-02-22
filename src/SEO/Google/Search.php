@@ -82,14 +82,14 @@ class Search
             ->filter('.srg')
             ->filter('.g')
             ->each(function (Crawler $nodeCrawler) {
-                $title = $nodeCrawler->filter('h3')->text();
-                $desc  = $nodeCrawler->filter('.st')->text();
-                $url   = $nodeCrawler->filter('a')->attr('href');
+                $title = $nodeCrawler->filter('h3');
+                $desc  = $nodeCrawler->filter('.st');
+                $url   = $nodeCrawler->filter('a');
 
                 return [
-                    'title' => $title,
-                    'desc'  => $desc,
-                    'url'   => $url,
+                    'title' => $title->count() > 0 ? $title->text() : '',
+                    'desc'  => $desc->count() > 0 ? $desc->text() : '',
+                    'url'   => $url->attr('href'),
                 ];
             });
 
