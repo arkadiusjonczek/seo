@@ -63,6 +63,8 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 
         $items = $method2->invokeArgs($search, [$html]);
 
-        $this->assertCount(100, $items);
+        // since google add rich snippets to the results page
+        // we don't have exactly 100 result entries per search query
+        $this->assertTrue(count($items) >= 97);
     }
 }
